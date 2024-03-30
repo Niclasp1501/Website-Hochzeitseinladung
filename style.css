@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +7,19 @@
   font-family: "Poppins", sans-serif;
 }
 
+html {
+  font-size: 16px;
+  /* Standardgröße */
+}
+
+
 body {
   min-height: 100vh;
-  background: url("background.jpg") no-repeat;
+  background-color: #ffffff;
   background-size: cover;
   background-position: center;
 }
+
 .header {
   position: fixed;
   top: 0;
@@ -26,6 +34,7 @@ body {
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   z-index: 100;
 }
+
 .header::before {
   content: "";
   position: absolute;
@@ -33,28 +42,38 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.4),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 0, 0, 0.4),
+      transparent);
   transition: 0.5s;
 }
+
 .header:hover::before {
   left: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(0, 60, 255, 0.4),
+      transparent);
 }
+
 .logo {
-  display: inline-block; /* Ermöglicht die Anwendung von width und height */
-  width: 150px; /* Setze die gewünschte Breite des Logos */
-  height: auto; /* Damit das Bild proportional skaliert wird */
+  display: inline-block;
+  /* Ermöglicht die Anwendung von width und height */
+  width: 150px;
+  /* Setze die gewünschte Breite des Logos */
+  height: auto;
+  /* Damit das Bild proportional skaliert wird */
   text-decoration: none;
-  cursor: pointer; /* Ändere von default zu pointer, da es sich um einen klickbaren Link handelt */
+  cursor: pointer;
+  /* Ändere von default zu pointer, da es sich um einen klickbaren Link handelt */
 }
 
 .logo img {
-  width: 100%; /* Dadurch nimmt das Bild die Breite des umgebenden .logo-Elements an */
-  height: auto; /* Erhält das Seitenverhältnis */
+  width: 100%;
+  /* Dadurch nimmt das Bild die Breite des umgebenden .logo-Elements an */
+  height: auto;
+  /* Erhält das Seitenverhältnis */
 }
 
 .navbar a {
@@ -64,9 +83,11 @@ body {
   margin-left: 35px;
   transition: 0.3s;
 }
+
 .navbar a:hover {
   color: #f00;
 }
+
 #menu-icon {
   font-size: 36px;
   color: #fff;
@@ -78,20 +99,81 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 5vh;
-  padding-top: 100px; /* oder die Höhe deiner Navbar plus etwas extra Raum */
-  
+  padding-top: 100px;
+  /* oder die Höhe deiner Navbar plus etwas extra Raum */
+
 }
 
 .card {
-  background: white; /* oder ein anderer Hintergrund, der zu deinem Design passt */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background: white;
+  /* oder ein anderer Hintergrund, der zu deinem Design passt */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   border-radius: 10px;
-  width: 80%; /* oder eine spezifische Breite, je nach Design */
-  max-width: 95%; /* begrenzt die Breite der Karte */
+  width: 80%;
+  /* oder eine spezifische Breite, je nach Design */
+  max-width: 95%;
+  /* begrenzt die Breite der Karte */
 }
 
+/* Sektion Einladung und Bild */
+.wedding-invitation {
+  background: url('niclas_alex.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+  height: auto;
+  /* Oder die gewünschte Höhe für die Sektion */
+  margin-top: 0px;
+  min-height: 60vh;
+  padding-bottom: 20px;
+  /* Etwas Abstand am unteren Rand */
+  color: #ffffff;
+  /* Setzt die Textfarbe auf Weiß für die gesamte Sektion */
 
+}
+
+.wedding-invitation .card {
+  background: rgba(248, 5, 5, 0);
+  /* Halbtransparenter Hintergrund für den Text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+  margin: 0;
+  width: 80%;
+  /* Oder die gewünschte Breite */
+  padding: 20px;
+  /* Oder der gewünschte Innenabstand */
+  display: flex;
+  /* Flexbox für die Karte */
+  flex-direction: column;
+  /* Inhalte vertikal anordnen */
+  justify-content: flex-end;
+  /* Inhalte am unteren Ende ausrichten */
+
+}
+
+.wedding-invitation .title {
+  text-transform: uppercase;
+  /* Macht den Text groß */
+  margin-bottom: 10px;
+  /* Schiebt den Titel nach oben */
+  font-size: 2.5rem;
+  /* Größere Schrift für den Titel */
+}
+
+.wedding-invitation .text-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* Nutzt die volle Höhe der .card */
+}
+
+.wedding-invitation .text-content {
+  font-size: 1.5rem;
+  margin-top: auto;
+  /* Schiebt den Inhaltstext nach unten */
+}
 
 
 
@@ -107,10 +189,18 @@ body {
     padding: 1.25rem 4%;
   }
 }
+
 @media (max-width: 768px) {
+  html {
+    font-size: 14px;
+    /* Etwas kleiner auf Mobilgeräten */
+  }
+
+
   #menu-icon {
     display: block;
   }
+
   .navbar {
     position: absolute;
     top: 100%;
@@ -119,14 +209,17 @@ body {
     padding: 0.5rem 4%;
     display: none;
   }
+
   .navbar.active {
     display: block;
   }
+
   .navbar a {
     display: block;
     margin: 1.5rem 0;
     text-align: center;
   }
+
   .nav-bg {
     position: fixed;
     top: 79px;
@@ -139,7 +232,27 @@ body {
     z-index: 99;
     display: none;
   }
+
   .nav-bg.active {
     display: block;
   }
+
+  .wedding-invitation {
+    min-height: 40vh;
+
+  }
+
+  .wedding-invitation .title {
+    font-size: 1.5rem;
+    /* Größere Schrift für den Titel */
+  }
+
+  .wedding-invitation .text-content {
+    font-size: 1rem;
+    /* Angepasste Schriftgröße für den Text */
+  }
+
+
+
+
 }
