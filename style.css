@@ -45,12 +45,18 @@ body {
   left: 100%;
 }
 .logo {
-  color: #fff;
-  font-size: 25px;
+  display: inline-block; /* Ermöglicht die Anwendung von width und height */
+  width: 150px; /* Setze die gewünschte Breite des Logos */
+  height: auto; /* Damit das Bild proportional skaliert wird */
   text-decoration: none;
-  font-weight: 600;
-  cursor: default;
+  cursor: pointer; /* Ändere von default zu pointer, da es sich um einen klickbaren Link handelt */
 }
+
+.logo img {
+  width: 100%; /* Dadurch nimmt das Bild die Breite des umgebenden .logo-Elements an */
+  height: auto; /* Erhält das Seitenverhältnis */
+}
+
 .navbar a {
   color: #000000;
   font-size: 18px;
