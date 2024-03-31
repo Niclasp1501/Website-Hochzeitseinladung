@@ -99,8 +99,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 5vh;
-  padding-top: 100px;
-  /* oder die Höhe deiner Navbar plus etwas extra Raum */
+  padding-top: 50px;
 
 }
 
@@ -116,7 +115,7 @@ body {
   /* begrenzt die Breite der Karte */
 }
 
-/* Sektion Einladung und Bild */
+/* Sektion Start und Bild */
 .wedding-invitation {
   background: url('niclas_alex.jpg') no-repeat center center;
   background-size: cover;
@@ -175,6 +174,45 @@ body {
   /* Schiebt den Inhaltstext nach unten */
 }
 
+
+/* Style für den Conntdown */
+#countdown {
+  color: #000; /* Schwarze Schriftfarbe */
+}
+
+#countdown .card {
+  text-align: center;
+  background: none; /* Entferne den Hintergrund der Karte, falls gesetzt */
+}
+
+#countdown h2 {
+  color: #000;
+  margin-bottom: 15px; /* Abstand unter der Überschrift */
+}
+
+#countdown-timer {
+  display: flex;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+#countdown-timer .time-container {
+  background-color: #aca4a4e3; /* Schwarze Hintergrundfarbe für jeden Zeit-Container */
+  color: #000000; /* Goldene Schriftfarbe für die Zahlen */
+  margin: 0 10px; /* Abstand zwischen den Zeit-Containern */
+  padding: 10px 20px; /* Innenabstand */
+  border-radius: 5px; /* Abgerundete Ecken */
+}
+
+#countdown-timer .time {
+  font-size: 3rem; /* Große Schriftgröße für die Zeitangabe */
+  font-weight: bold; /* Fettgedruckt für bessere Sichtbarkeit */
+}
+
+#countdown-timer .label {
+  display: block; /* Labels unter den Zahlen anzeigen */
+  font-size: 1.5rem; /* Schriftgröße für die Labels */
+}
 
 
 
@@ -236,7 +274,7 @@ body {
   .nav-bg.active {
     display: block;
   }
-
+/* Sektion Start und Bild */
   .wedding-invitation {
     min-height: 40vh;
 
@@ -252,7 +290,23 @@ body {
     /* Angepasste Schriftgröße für den Text */
   }
 
+  /* Style für den Conntdown */
+  #countdown-timer .time {
+    font-size: 1.5rem; /* Kleinere Schriftgröße für die Zeitangabe auf mobilen Geräten */
+  }
 
+  #countdown-timer .label {
+    font-size: 1rem; /* Kleinere Schriftgröße für die Labels auf mobilen Geräten */
+  }
 
+  #countdown-timer .time-container {
+    padding: 5px 8px; /* Reduzierter Innenabstand auf mobilen Geräten */
+    margin: 0 5px; /* Reduzierter Abstand zwischen den Zeit-Containern auf mobilen Geräten */
+  }
 
+  #countdown h2 {
+    font-size: 1.5rem; /* Kleinere Schriftgröße für die Überschrift auf mobilen Geräten */
+  }
 }
+
+
