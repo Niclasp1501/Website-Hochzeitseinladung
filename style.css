@@ -105,6 +105,7 @@ body {
 
 .card {
   background: white;
+  text-align: center; /*Allgemeine Textausrichtung */
   /* oder ein anderer Hintergrund, der zu deinem Design passt */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -215,6 +216,46 @@ body {
 }
 
 
+/* Google Sektion*/
+
+.location-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px; /* Abstand zwischen Karten- und Info-Bereich */
+}
+
+.map iframe {
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px; /* Anpassen nach Bedarf */
+  height: 300px; /* Anpassen nach Bedarf */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.location-info {
+  width: 100%;
+  max-width: 600px; /* Anpassen nach Bedarf */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: white;
+}
+
+.location-info h2, .location-info a, .location-info p {
+  margin-bottom: 10px;
+}
+
+.location-info button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #d40a0a;
+  color: white;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
 
 
 
