@@ -1,7 +1,7 @@
 const menuIcon = document.querySelector('#menu-icon');
 const navbar = document.querySelector('.navbar');
 const navbg = document.querySelector('.nav-bg');
-
+let showFirstLocation = false; // Setze dies auf false, um die Anzeige Standesamt zu unterdrücken 
 menuIcon.addEventListener('click', () => {
     toggleNavbar();
 });
@@ -62,14 +62,42 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
-//Anzeige von Loctions bestimmen
-// Angenommen, diese Variable kontrolliert, ob die erste Location angezeigt wird
-let showFirstLocation = true; // Setze dies auf false, um die Anzeige zu unterdrücken
-document.addEventListener('DOMContentLoaded', (event) => {
+
+// Funktion zum Überprüfen und Anzeigen des Namens
+function checkAndDisplayGuestName(guestName) {
+    const allowedNames = ['Alexander', 'Stefan', 'Ernst', 'Andrea']; // Hier die Namen eintragen die zum Standesamt kommen sollen
+    let showFirstLocation = allowedNames.includes(guestName);
+
+    var guestNameSpan = document.querySelector('.guest-name');
+    if (guestNameSpan) {
+        guestNameSpan.textContent = guestName ? ' ' + guestName + ', ' : '';
+    }
+    
+    // Anzeige von Locations basierend auf showFirstLocation bestimmen
     if (!showFirstLocation) {
       document.querySelector('.first-location-group').style.display = 'none';
       document.querySelector('.first-location-heading').style.display = 'none';
       document.querySelector('.first-location-divider').style.display = 'none';
     }
-  });
-  
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    function getQueryParam(param) {
+        var search = window.location.search.substring(1);
+        var variables = search.split('&');
+        for (var i = 0; i < variables.length; i++) {
+            var pair = variables[i].split('=');
+            if (decodeURIComponent(pair[0]) == param) {
+                return decodeURIComponent(pair[1].replace(/\+/g, ' '));
+            }
+        }
+        return null;
+    }
+
+    var guestName = getQueryParam('name');
+    checkAndDisplayGuestName(guestName);
+});
+
+
+
+
