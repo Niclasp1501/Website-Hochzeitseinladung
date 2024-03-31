@@ -105,7 +105,8 @@ body {
 
 .card {
   background: white;
-  text-align: center; /*Allgemeine Textausrichtung */
+  text-align: center;
+  /*Allgemeine Textausrichtung */
   /* oder ein anderer Hintergrund, der zu deinem Design passt */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -178,17 +179,20 @@ body {
 
 /* Style für den Conntdown */
 #countdown {
-  color: #000; /* Schwarze Schriftfarbe */
+  color: #000;
+  /* Schwarze Schriftfarbe */
 }
 
 #countdown .card {
   text-align: center;
-  background: none; /* Entferne den Hintergrund der Karte, falls gesetzt */
+  background: none;
+  /* Entferne den Hintergrund der Karte, falls gesetzt */
 }
 
 #countdown h2 {
   color: #000;
-  margin-bottom: 15px; /* Abstand unter der Überschrift */
+  margin-bottom: 15px;
+  /* Abstand unter der Überschrift */
 }
 
 #countdown-timer {
@@ -198,56 +202,69 @@ body {
 }
 
 #countdown-timer .time-container {
-  background-color: #aca4a4e3; /* Schwarze Hintergrundfarbe für jeden Zeit-Container */
-  color: #000000; /* Goldene Schriftfarbe für die Zahlen */
-  margin: 0 10px; /* Abstand zwischen den Zeit-Containern */
-  padding: 10px 20px; /* Innenabstand */
-  border-radius: 5px; /* Abgerundete Ecken */
+  background-color: #aca4a4e3;
+  /* Schwarze Hintergrundfarbe für jeden Zeit-Container */
+  color: #000000;
+  /* Goldene Schriftfarbe für die Zahlen */
+  margin: 0 10px;
+  /* Abstand zwischen den Zeit-Containern */
+  padding: 10px 20px;
+  /* Innenabstand */
+  border-radius: 5px;
+  /* Abgerundete Ecken */
 }
 
 #countdown-timer .time {
-  font-size: 3rem; /* Große Schriftgröße für die Zeitangabe */
-  font-weight: bold; /* Fettgedruckt für bessere Sichtbarkeit */
+  font-size: 3rem;
+  /* Große Schriftgröße für die Zeitangabe */
+  font-weight: bold;
+  /* Fettgedruckt für bessere Sichtbarkeit */
 }
 
 #countdown-timer .label {
-  display: block; /* Labels unter den Zahlen anzeigen */
-  font-size: 1.5rem; /* Schriftgröße für die Labels */
+  display: block;
+  /* Labels unter den Zahlen anzeigen */
+  font-size: 1.5rem;
+  /* Schriftgröße für die Labels */
 }
 
 
 /* Google Sektion*/
 
-.location-wrapper {
+.location-card {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 20px; /* Abstand zwischen Karten- und Info-Bereich */
+  flex-direction: column;
+  align-items: center;
 }
 
-.map iframe {
+.location-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+}
+
+.map-container {
+  flex: 1;
+  padding: 10px;
   border-radius: 10px;
   width: 100%;
-  max-width: 600px; /* Anpassen nach Bedarf */
-  height: 300px; /* Anpassen nach Bedarf */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  /* Anpassen nach Bedarf */
+  height: 300px;
+  /* Anpassen nach Bedarf */
+
 }
 
-.location-info {
-  width: 100%;
-  max-width: 600px; /* Anpassen nach Bedarf */
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  background: white;
+.location-info-container {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.location-info h2, .location-info a, .location-info p {
-  margin-bottom: 10px;
-}
-
-.location-info button {
+.location-info-container button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -255,6 +272,16 @@ body {
   color: white;
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
+  width: 50%;
+  margin: auto;
+  align-self: center;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -315,7 +342,8 @@ body {
   .nav-bg.active {
     display: block;
   }
-/* Sektion Start und Bild */
+
+  /* Sektion Start und Bild */
   .wedding-invitation {
     min-height: 40vh;
 
@@ -333,21 +361,68 @@ body {
 
   /* Style für den Conntdown */
   #countdown-timer .time {
-    font-size: 1.5rem; /* Kleinere Schriftgröße für die Zeitangabe auf mobilen Geräten */
+    font-size: 1.5rem;
+    /* Kleinere Schriftgröße für die Zeitangabe auf mobilen Geräten */
   }
 
   #countdown-timer .label {
-    font-size: 1rem; /* Kleinere Schriftgröße für die Labels auf mobilen Geräten */
+    font-size: 1rem;
+    /* Kleinere Schriftgröße für die Labels auf mobilen Geräten */
   }
 
   #countdown-timer .time-container {
-    padding: 5px 8px; /* Reduzierter Innenabstand auf mobilen Geräten */
-    margin: 0 5px; /* Reduzierter Abstand zwischen den Zeit-Containern auf mobilen Geräten */
+    padding: 5px 8px;
+    /* Reduzierter Innenabstand auf mobilen Geräten */
+    margin: 0 5px;
+    /* Reduzierter Abstand zwischen den Zeit-Containern auf mobilen Geräten */
   }
 
   #countdown h2 {
-    font-size: 1.5rem; /* Kleinere Schriftgröße für die Überschrift auf mobilen Geräten */
+    font-size: 1.5rem;
+    /* Kleinere Schriftgröße für die Überschrift auf mobilen Geräten */
   }
+
+
+  /* Google Sektion*/
+
+  .location-content-wrapper {
+    flex-direction: column;
+    /* Stapelt die Karte und Infos untereinander */
+  }
+
+  .map-container,
+  .location-info-container {
+    max-width: 100%;
+    /* Nimmt die volle Breite auf kleineren Bildschirmen ein */
+    height: auto;
+    /* Passt die Höhe automatisch an */
+    padding: 10px;
+  }
+
+  .map-container {
+    margin-bottom: 20px;
+    /* Fügt einen Abstand zwischen Karte und Infos hinzu */
+  }
+
+  .location-info-container {
+    /* Behält die Eigenschaften von flex-direction: column und justify-content: center bei */
+  }
+
+  .location-info-container button {
+    width: 100%;
+    /* Lässt den Button die gesamte Breite der Info-Container einnehmen */
+    margin: 0;
+    /* Entfernt automatische Ränder */
+    align-self: center;
+    /* Zentriert den Button */
+  }
+
+
+
+
+
+
+
+
+
 }
-
-
