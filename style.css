@@ -99,7 +99,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 5vh;
-  padding-top: 50px;
+  padding-top: 20px;
 
 }
 
@@ -111,9 +111,9 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   border-radius: 10px;
-  width: 80%;
+  width: 50%;
   /* oder eine spezifische Breite, je nach Design */
-  max-width: 95%;
+  max-width: 80%;
   /* begrenzt die Breite der Karte */
 }
 
@@ -178,21 +178,12 @@ body {
 
 
 /* Style für den Conntdown */
-#countdown {
-  color: #000;
-  /* Schwarze Schriftfarbe */
-}
-
+/* Spezifische Anpassungen für den Countdown-Bereich */
 #countdown .card {
-  text-align: center;
-  background: none;
-  /* Entferne den Hintergrund der Karte, falls gesetzt */
-}
-
-#countdown h2 {
-  color: #000;
-  margin-bottom: 15px;
-  /* Abstand unter der Überschrift */
+  border: none; /* Entfernt den Rahmen */
+  box-shadow: none; /* Entfernt den Schatten, falls vorhanden */
+  background: transparent; /* Setzt den Hintergrund auf transparent */
+  padding: 0; /* Entfernt den inneren Abstand */
 }
 
 #countdown-timer {
@@ -202,7 +193,7 @@ body {
 }
 
 #countdown-timer .time-container {
-  background-color: #aca4a4e3;
+  background-color: #f0f0f0;
   /* Schwarze Hintergrundfarbe für jeden Zeit-Container */
   color: #000000;
   /* Goldene Schriftfarbe für die Zahlen */
@@ -228,27 +219,77 @@ body {
   /* Schriftgröße für die Labels */
 }
 
+/* Einladungs Sektion*/
+
+/* Einladungskarte innerhalb der spezifischen Sektion */
+#wedding-invitation .invitation-card {
+  background-color: #f0f0f0; /* Leicht abgesetzter Hintergrund */
+  width: 85%; /* Etwas kleiner als die normalen Karten */
+  max-width: 45%; /* Maximale Breite anpassen */
+  margin: 20px auto; /* Zentriert die Karte mit vertikalem Abstand */
+  padding: 50px; /* Innerer Abstand */
+  border-radius: 10px; /* Rundungen beibehalten */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schatten für Tiefe */
+  transition: box-shadow 0.3s ease; /* Sanfter Übergang für den Hover-Effekt */
+}
+
+/* Hover-Effekt für die Einladungskarte */
+#wedding-invitation .invitation-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Verstärkter Schatten */
+}
+
+/* Stil für die Überschrift in der Einladungskarte */
+#wedding-invitation .invitation-heading {
+  color: #d40a0a; /* Rote Farbe */
+  margin-bottom: 15px; /* Abstand zur Text */
+  text-align: center; /* Zentrierung */
+  font-size: 2.5rem; /* Angepasste Schriftgröße */
+}
+
+/* Stil für den Namen der eingeladenen Person */
+#wedding-invitation .guest-name {
+  color: #377af5; /* Blaue Farbe */
+  font-weight: bold; /* Fettdruck */
+}
+
+/* Stil für den Einladungstext */
+#wedding-invitation .invitation-text {
+  color: #666; /* Dunkelgrauer Text */
+  font-size: 1.5rem; /* Standardtextgröße */
+  line-height: 1.5; /* Zeilenhöhe für bessere Lesbarkeit */
+}
+
+
 
 /* Google Sektion*/
 
 .location-group {
   display: flex;
-  justify-content: center; /* Zentriert die .map-container und .location-info-container horizontal */
-  align-items: flex-start; /* Stellt sicher, dass die Elemente am oberen Rand ausgerichtet sind */
-  width: 100%; /* Setzt die Breite auf die volle Breite der .card */
-  margin-bottom: 20px; /* Abstand zwischen den Gruppen */
+  justify-content: center;
+  /* Zentriert die .map-container und .location-info-container horizontal */
+  align-items: flex-start;
+  /* Stellt sicher, dass die Elemente am oberen Rand ausgerichtet sind */
+  width: 100%;
+  /* Setzt die Breite auf die volle Breite der .card */
+  margin-bottom: 20px;
+  /* Abstand zwischen den Gruppen */
 }
 
 .map-container,
 .location-info-container {
-  width: 45%; /* Setzt die Breite auf 45%, damit Platz für den Abstand zwischen den Elementen bleibt */
-  margin: 0 10px; /* Abstand zwischen den Containern */
+  width: 45%;
+  /* Setzt die Breite auf 45%, damit Platz für den Abstand zwischen den Elementen bleibt */
+  margin: 0 10px;
+  /* Abstand zwischen den Containern */
 }
 
 .map-container iframe {
-  width: 100%; /* Sorgt dafür, dass die Karte die volle Breite ihres Containers einnimmt */
-  height: 300px; /* Setzt eine feste Höhe */
-  border-radius: 10px; /* Rundet die Ecken */
+  width: 100%;
+  /* Sorgt dafür, dass die Karte die volle Breite ihres Containers einnimmt */
+  height: 300px;
+  /* Setzt eine feste Höhe */
+  border-radius: 10px;
+  /* Rundet die Ecken */
 }
 
 .location-info-container {
@@ -257,8 +298,11 @@ body {
   justify-content: center;
 }
 
-.location-info-container h3, .location-info-container a, .location-info-container p {
-  margin-bottom: 10px; /* Abstand zwischen den Textelementen */
+.location-info-container h3,
+.location-info-container a,
+.location-info-container p {
+  margin-bottom: 10px;
+  /* Abstand zwischen den Textelementen */
 }
 
 .location-info-container button {
@@ -269,23 +313,34 @@ body {
   border-radius: 5px;
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
-  width: 50%; /* Breite des Buttons */
-  align-self: center; /* Zentriert den Button in der .location-info-container */
-  margin-top: 10px; /* Abstand vom letzten Textelement zum Button */
+  width: 50%;
+  /* Breite des Buttons */
+  align-self: center;
+  /* Zentriert den Button in der .location-info-container */
+  margin-top: 10px;
+  /* Abstand vom letzten Textelement zum Button */
 }
 
 .location-divider {
-  width: 92%; /* Breite des Strichs, entsprechend der .card Breite */
-  border: 2px solid #d40a0a; /* Rote Farbe und Dicke des Strichs */
-  margin: 20px auto; /* Zentriert den Strich horizontal mit Abstand oben und unten */
+  width: 92%;
+  /* Breite des Strichs, entsprechend der .card Breite */
+  border: 2px solid #d40a0a;
+  /* Rote Farbe und Dicke des Strichs */
+  margin: 20px auto;
+  /* Zentriert den Strich horizontal mit Abstand oben und unten */
 }
 
 .location-heading {
-  text-align: center; /* Zentriert die Überschrift */
-  color: #d40a0a; /* Rote Farbe der Überschrift */
-  margin: 20px 0; /* Abstand oben und unten von der Überschrift */
-  font-family: 'Poppins', sans-serif; /* Schriftart */
-  font-size: 1.5rem; /* Größe der Schriftart */
+  text-align: center;
+  /* Zentriert die Überschrift */
+  color: #d40a0a;
+  /* Rote Farbe der Überschrift */
+  margin: 20px 0;
+  /* Abstand oben und unten von der Überschrift */
+  font-family: 'Poppins', sans-serif;
+  /* Schriftart */
+  font-size: 1.5rem;
+  /* Größe der Schriftart */
 }
 
 
@@ -298,6 +353,8 @@ body {
     padding: 1.25rem 4%;
   }
 }
+
+
 
 @media (max-width: 768px) {
   html {
@@ -346,6 +403,28 @@ body {
     display: block;
   }
 
+  .section {
+   padding-top: 15px;
+  
+  }
+
+
+  .card {
+    background: white;
+    text-align: center;
+    /*Allgemeine Textausrichtung */
+    /* oder ein anderer Hintergrund, der zu deinem Design passt */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    /* oder eine spezifische Breite, je nach Design */
+    max-width: 90%;
+    /* begrenzt die Breite der Karte */
+  }
+
+
+
   /* Sektion Start und Bild */
   .wedding-invitation {
     min-height: 40vh;
@@ -386,25 +465,53 @@ body {
   }
 
 
+  /* Einladungs Sektion*/
+
+  /* Anpassungen für die Einladungskarte in mobiler Ansicht */
+  #wedding-invitation .invitation-card {
+    width: 95%; /* Karte nimmt die volle Breite ein */
+    max-width: none; /* Entfernt die maximale Breite Beschränkung */
+    padding: 20px; /* Angepasster innerer Abstand */
+    margin: 5px 0; /* Verringert den vertikalen Abstand */
+  }
+
+  #wedding-invitation .invitation-heading {
+    font-size: 1.5rem; /* Verkleinerte Schriftgröße für die Überschrift */
+  }
+
+  #wedding-invitation .guest-name {
+    font-size: 1.2rem; /* Angepasste Schriftgröße für den Gastnamen */
+  }
+
+  #wedding-invitation .invitation-text {
+    font-size: 1rem; /* Kleinere Schriftgröße für den Text */
+  }
+
   /* Google Sektion*/
 
   .location-group {
-    flex-direction: column; /* Stapelt die Elemente in der mobilen Ansicht */
-    align-items: center; /* Zentriert die Elemente vertikal */
+    flex-direction: column;
+    /* Stapelt die Elemente in der mobilen Ansicht */
+    align-items: center;
+    /* Zentriert die Elemente vertikal */
   }
 
   .map-container,
   .location-info-container {
-    width: 90%; /* Setzt die Breite auf 90% in der mobilen Ansicht */
-    margin: 10px 0; /* Abstand oben und unten */
+    width: 90%;
+    /* Setzt die Breite auf 90% in der mobilen Ansicht */
+    margin: 10px 0;
+    /* Abstand oben und unten */
   }
 
   .location-info-container button {
-    width: 100%; /* Setzt die Breite des Buttons auf 100% in der mobilen Ansicht */
+    width: 100%;
+    /* Setzt die Breite des Buttons auf 100% in der mobilen Ansicht */
   }
 
   .location-divider {
-    width: 90%; /* Etwas breiter auf kleinen Bildschirmen */
+    width: 90%;
+    /* Etwas breiter auf kleinen Bildschirmen */
   }
 
 
