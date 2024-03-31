@@ -231,59 +231,62 @@ body {
 
 /* Google Sektion*/
 
-.location-card {
+.location-group {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center; /* Zentriert die .map-container und .location-info-container horizontal */
+  align-items: flex-start; /* Stellt sicher, dass die Elemente am oberen Rand ausgerichtet sind */
+  width: 100%; /* Setzt die Breite auf die volle Breite der .card */
+  margin-bottom: 20px; /* Abstand zwischen den Gruppen */
 }
 
-.location-content-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  width: 100%;
+.map-container,
+.location-info-container {
+  width: 45%; /* Setzt die Breite auf 45%, damit Platz für den Abstand zwischen den Elementen bleibt */
+  margin: 0 10px; /* Abstand zwischen den Containern */
 }
 
-.map-container {
-  flex: 1;
-  padding: 10px;
-  border-radius: 10px;
-  width: 100%;
-  max-width: 600px;
-  /* Anpassen nach Bedarf */
-  height: 300px;
-  /* Anpassen nach Bedarf */
-
+.map-container iframe {
+  width: 100%; /* Sorgt dafür, dass die Karte die volle Breite ihres Containers einnimmt */
+  height: 300px; /* Setzt eine feste Höhe */
+  border-radius: 10px; /* Rundet die Ecken */
 }
 
 .location-info-container {
-  flex: 1;
-  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
+.location-info-container h3, .location-info-container a, .location-info-container p {
+  margin-bottom: 10px; /* Abstand zwischen den Textelementen */
+}
+
 .location-info-container button {
+  background-color: #d40a0a;
+  color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #d40a0a;
-  color: white;
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
-  width: 50%;
-  margin: auto;
-  align-self: center;
+  width: 50%; /* Breite des Buttons */
+  align-self: center; /* Zentriert den Button in der .location-info-container */
+  margin-top: 10px; /* Abstand vom letzten Textelement zum Button */
 }
 
-.map-container iframe {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.location-divider {
+  width: 92%; /* Breite des Strichs, entsprechend der .card Breite */
+  border: 2px solid #d40a0a; /* Rote Farbe und Dicke des Strichs */
+  margin: 20px auto; /* Zentriert den Strich horizontal mit Abstand oben und unten */
 }
 
+.location-heading {
+  text-align: center; /* Zentriert die Überschrift */
+  color: #d40a0a; /* Rote Farbe der Überschrift */
+  margin: 20px 0; /* Abstand oben und unten von der Überschrift */
+  font-family: 'Poppins', sans-serif; /* Schriftart */
+  font-size: 1.5rem; /* Größe der Schriftart */
+}
 
 
 
@@ -385,39 +388,24 @@ body {
 
   /* Google Sektion*/
 
-  .location-content-wrapper {
-    flex-direction: column;
-    /* Stapelt die Karte und Infos untereinander */
+  .location-group {
+    flex-direction: column; /* Stapelt die Elemente in der mobilen Ansicht */
+    align-items: center; /* Zentriert die Elemente vertikal */
   }
 
   .map-container,
   .location-info-container {
-    max-width: 100%;
-    /* Nimmt die volle Breite auf kleineren Bildschirmen ein */
-    height: auto;
-    /* Passt die Höhe automatisch an */
-    padding: 10px;
-  }
-
-  .map-container {
-    margin-bottom: 20px;
-    /* Fügt einen Abstand zwischen Karte und Infos hinzu */
-  }
-
-  .location-info-container {
-    /* Behält die Eigenschaften von flex-direction: column und justify-content: center bei */
+    width: 90%; /* Setzt die Breite auf 90% in der mobilen Ansicht */
+    margin: 10px 0; /* Abstand oben und unten */
   }
 
   .location-info-container button {
-    width: 100%;
-    /* Lässt den Button die gesamte Breite der Info-Container einnehmen */
-    margin: 0;
-    /* Entfernt automatische Ränder */
-    align-self: center;
-    /* Zentriert den Button */
+    width: 100%; /* Setzt die Breite des Buttons auf 100% in der mobilen Ansicht */
   }
 
-
+  .location-divider {
+    width: 90%; /* Etwas breiter auf kleinen Bildschirmen */
+  }
 
 
 

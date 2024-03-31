@@ -60,3 +60,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }, 1000);
 });
+
+
+//Anzeige von Loctions bestimmen
+// Angenommen, diese Variable kontrolliert, ob die erste Location angezeigt wird
+let showFirstLocation = true; // Setze dies auf false, um die Anzeige zu unterdrücken
+document.addEventListener('DOMContentLoaded', (event) => {
+    if (!showFirstLocation) {
+      document.querySelector('.first-location-group').style.display = 'none';
+      document.querySelector('.first-location-heading').style.display = 'none';
+      document.querySelector('.first-location-divider').style.display = 'none';
+    }
+  });
+  
