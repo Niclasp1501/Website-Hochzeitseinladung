@@ -180,10 +180,14 @@ body {
 /* Style für den Conntdown */
 /* Spezifische Anpassungen für den Countdown-Bereich */
 #countdown .card {
-  border: none; /* Entfernt den Rahmen */
-  box-shadow: none; /* Entfernt den Schatten, falls vorhanden */
-  background: transparent; /* Setzt den Hintergrund auf transparent */
-  padding: 0; /* Entfernt den inneren Abstand */
+  border: none;
+  /* Entfernt den Rahmen */
+  box-shadow: none;
+  /* Entfernt den Schatten, falls vorhanden */
+  background: transparent;
+  /* Setzt den Hintergrund auf transparent */
+  padding: 0;
+  /* Entfernt den inneren Abstand */
 }
 
 #countdown-timer {
@@ -223,41 +227,172 @@ body {
 
 /* Einladungskarte innerhalb der spezifischen Sektion */
 #wedding-invitation .invitation-card {
-  background-color: #f0f0f0; /* Leicht abgesetzter Hintergrund */
-  width: 85%; /* Etwas kleiner als die normalen Karten */
-  max-width: 45%; /* Maximale Breite anpassen */
-  margin: 20px auto; /* Zentriert die Karte mit vertikalem Abstand */
-  padding: 50px; /* Innerer Abstand */
-  border-radius: 10px; /* Rundungen beibehalten */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schatten für Tiefe */
-  transition: box-shadow 0.3s ease; /* Sanfter Übergang für den Hover-Effekt */
+  background-color: #f0f0f0;
+  /* Leicht abgesetzter Hintergrund */
+  width: 85%;
+  /* Etwas kleiner als die normalen Karten */
+  max-width: 45%;
+  /* Maximale Breite anpassen */
+  margin: 20px auto;
+  /* Zentriert die Karte mit vertikalem Abstand */
+  padding: 50px;
+  /* Innerer Abstand */
+  border-radius: 10px;
+  /* Rundungen beibehalten */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Schatten für Tiefe */
+  transition: box-shadow 0.3s ease;
+  /* Sanfter Übergang für den Hover-Effekt */
 }
 
 /* Hover-Effekt für die Einladungskarte */
 #wedding-invitation .invitation-card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Verstärkter Schatten */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /* Verstärkter Schatten */
 }
 
 /* Stil für die Überschrift in der Einladungskarte */
 #wedding-invitation .invitation-heading {
-  color: #d40a0a; /* Rote Farbe */
-  margin-bottom: 15px; /* Abstand zur Text */
-  text-align: center; /* Zentrierung */
-  font-size: 2.5rem; /* Angepasste Schriftgröße */
+  color: #d40a0a;
+  /* Rote Farbe */
+  margin-bottom: 15px;
+  /* Abstand zur Text */
+  text-align: center;
+  /* Zentrierung */
+  font-size: 2.5rem;
+  /* Angepasste Schriftgröße */
 }
 
 /* Stil für den Namen der eingeladenen Person */
 #wedding-invitation .guest-name {
-  color: #377af5; /* Blaue Farbe */
-  font-weight: bold; /* Fettdruck */
+  color: #377af5;
+  /* Blaue Farbe */
+  font-weight: bold;
+  /* Fettdruck */
 }
 
 /* Stil für den Einladungstext */
 #wedding-invitation .invitation-text {
-  color: #666; /* Dunkelgrauer Text */
-  font-size: 1.5rem; /* Standardtextgröße */
-  line-height: 1.5; /* Zeilenhöhe für bessere Lesbarkeit */
+  color: #666;
+  /* Dunkelgrauer Text */
+  font-size: 1.5rem;
+  /* Standardtextgröße */
+  line-height: 1.5;
+  /* Zeilenhöhe für bessere Lesbarkeit */
 }
+
+
+/* Tagesablauf Sektion */
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: rgb(0, 0, 0);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+
+.timeline:last-child::before {
+  display: none;
+}
+
+
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #1e2cec;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid #f0f0f0;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #f0f0f0;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid #f0f0f0;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #f0f0f0 transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: #f0f0f0;
+  position: relative;
+  border-radius: 6px;
+}
+
+.container i {
+  font-size: 3rem;
+  color: #c41111;
+  /* Farbe der Icons */
+}
+
+
+
+
+
 
 
 
@@ -365,6 +500,7 @@ body {
 
   #menu-icon {
     display: block;
+    color: black;
   }
 
   .navbar {
@@ -404,8 +540,8 @@ body {
   }
 
   .section {
-   padding-top: 15px;
-  
+    padding-top: 15px;
+
   }
 
 
@@ -469,23 +605,66 @@ body {
 
   /* Anpassungen für die Einladungskarte in mobiler Ansicht */
   #wedding-invitation .invitation-card {
-    width: 95%; /* Karte nimmt die volle Breite ein */
-    max-width: none; /* Entfernt die maximale Breite Beschränkung */
-    padding: 20px; /* Angepasster innerer Abstand */
-    margin: 5px 0; /* Verringert den vertikalen Abstand */
+    width: 95%;
+    /* Karte nimmt die volle Breite ein */
+    max-width: none;
+    /* Entfernt die maximale Breite Beschränkung */
+    padding: 20px;
+    /* Angepasster innerer Abstand */
+    margin: 5px 0;
+    /* Verringert den vertikalen Abstand */
   }
 
   #wedding-invitation .invitation-heading {
-    font-size: 1.5rem; /* Verkleinerte Schriftgröße für die Überschrift */
+    font-size: 1.5rem;
+    /* Verkleinerte Schriftgröße für die Überschrift */
   }
 
   #wedding-invitation .guest-name {
-    font-size: 1.2rem; /* Angepasste Schriftgröße für den Gastnamen */
+    font-size: 1.2rem;
+    /* Angepasste Schriftgröße für den Gastnamen */
   }
 
   #wedding-invitation .invitation-text {
-    font-size: 1rem; /* Kleinere Schriftgröße für den Text */
+    font-size: 1rem;
+    /* Kleinere Schriftgröße für den Text */
+
   }
+
+  /* Tagesablauf Sektion */
+
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+    }
+    
+    /* Full-width containers */
+    .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+    }
+    
+    /* Make sure that all arrows are pointing leftwards */
+    .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+    }
+  
+    /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+    left: 15px;
+    }
+    
+    /* Make all right containers behave like the left ones */
+    .right {
+    left: 0%;
+    }
+
+
+
 
   /* Google Sektion*/
 

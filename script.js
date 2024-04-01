@@ -78,6 +78,8 @@ function checkAndDisplayGuestName(guestName) {
       document.querySelector('.first-location-group').style.display = 'none';
       document.querySelector('.first-location-heading').style.display = 'none';
       document.querySelector('.first-location-divider').style.display = 'none';
+      document.querySelector('.first-schedule-group').style.display = 'none';
+
     }
 }
 
