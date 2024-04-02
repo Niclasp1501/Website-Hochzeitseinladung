@@ -395,7 +395,6 @@ body {
 
 
 
-
 /* Google Sektion*/
 
 .location-group {
@@ -477,6 +476,41 @@ body {
   font-size: 1.5rem;
   /* Größe der Schriftart */
 }
+
+
+/* Sektion Trauzeugen*/
+.trauzeuge-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.trauzeuge {
+  text-align: center;
+}
+
+.trauzeuge-bild {
+  width: 100px; /* Oder eine andere Größe, je nach Design */
+  height: 100px; /* Sollte gleich wie die Breite sein, um ein rundes Bild zu erzeugen */
+  border-radius: 50%; /* Macht das Bild rund */
+  margin-bottom: 10px; /* Etwas Abstand unter dem Bild */
+}
+
+.kontakt-info {
+  /* Hier könntest du Styling für die Kontaktinformationen hinzufügen, z.B. Icons */
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
