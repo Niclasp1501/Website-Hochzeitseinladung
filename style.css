@@ -501,14 +501,54 @@ body {
 }
 
 
+/* Sektion FAQ*/
 
 
+.accordion {
+  background-color: #f9f9f9;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px; /* Erhöhte Schriftgröße */
+  transition: background-color 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.accordion:hover {
+  background-color: #ddd;
+}
 
+.accordion i {
+  font-size: 25px;
+}
 
+/* Farbe der Icons setzen */
+.accordion .bx {
+  color: #007bff; /* Blaue Farbe für Icons */
+}
 
+.accordion .plus-icon {
+  color: red; /* Rote Farbe für das Plus-Icon */
+  transition: transform 0.4s ease;
+}
 
+/* Rotes Minus beim Aufklappen */
+.accordion.active .plus-icon {
+  transform: rotate(45deg); /* Kreiert die Illusion eines Minus-Zeichens */
+}
 
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
 
 
 
