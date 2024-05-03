@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
+:root {
+  --alex-blue: #1a1aff;
+  /* Beispiel für die Verwendung var(--alex-blue;) */
+  --niclas-red: #Ed0101;
+  /* Beispiel für die Verwendung var(--niclas-red); */
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -44,7 +52,7 @@ body {
   height: 100%;
   background: linear-gradient(90deg,
       transparent,
-      rgba(255, 0, 0, 0.4),
+      rgba(255,19,23, 0.4),
       transparent);
   transition: 0.5s;
 }
@@ -53,14 +61,14 @@ body {
   left: 100%;
   background: linear-gradient(90deg,
       transparent,
-      rgba(0, 60, 255, 0.4),
+      rgba(26, 26, 255, 0.4),
       transparent);
 }
 
 .logo {
   display: inline-block;
   /* Ermöglicht die Anwendung von width und height */
-  width: 150px;
+  width: 200px;
   /* Setze die gewünschte Breite des Logos */
   height: auto;
   /* Damit das Bild proportional skaliert wird */
@@ -85,7 +93,7 @@ body {
 }
 
 .navbar a:hover {
-  color: #f00;
+  color: var(--niclas-red);
 }
 
 #menu-icon {
@@ -253,7 +261,7 @@ body {
 
 /* Stil für die Überschrift in der Einladungskarte */
 #wedding-invitation .invitation-heading {
-  color: #d40a0a;
+  color: var(--niclas-red);
   /* Rote Farbe */
   margin-bottom: 15px;
   /* Abstand zur Text */
@@ -265,7 +273,7 @@ body {
 
 /* Stil für den Namen der eingeladenen Person */
 #wedding-invitation .guest-name {
-  color: #377af5;
+  color: var(--alex-blue);
   /* Blaue Farbe */
   font-weight: bold;
   /* Fettdruck */
@@ -326,7 +334,7 @@ body {
   height: 25px;
   right: -17px;
   background-color: white;
-  border: 4px solid #1e2cec;
+  border: 4px solid var(--alex-blue);
   top: 15px;
   border-radius: 50%;
   z-index: 1;
@@ -385,14 +393,9 @@ body {
 
 .container i {
   font-size: 3rem;
-  color: #c41111;
+  color: var(--niclas-red);
   /* Farbe der Icons */
 }
-
-
-
-
-
 
 
 /* Google Sektion*/
@@ -440,7 +443,7 @@ body {
 }
 
 .location-info-container button {
-  background-color: #d40a0a;
+  background-color: var(--niclas-red);
   color: white;
   padding: 10px 20px;
   border: none;
@@ -458,7 +461,7 @@ body {
 .location-divider {
   width: 92%;
   /* Breite des Strichs, entsprechend der .card Breite */
-  border: 2px solid #d40a0a;
+  border: 2px solid var(--niclas-red);
   /* Rote Farbe und Dicke des Strichs */
   margin: 20px auto;
   /* Zentriert den Strich horizontal mit Abstand oben und unten */
@@ -467,7 +470,7 @@ body {
 .location-heading {
   text-align: center;
   /* Zentriert die Überschrift */
-  color: #d40a0a;
+  color: var(--niclas-red);
   /* Rote Farbe der Überschrift */
   margin: 20px 0;
   /* Abstand oben und unten von der Überschrift */
@@ -478,7 +481,7 @@ body {
 }
 
 
-/* Sektion Trauzeugen*/
+/* Sektion Trauzeugen */
 .trauzeuge-container {
   display: flex;
   justify-content: space-around;
@@ -490,16 +493,41 @@ body {
 }
 
 .trauzeuge-bild {
-  width: 100px; /* Oder eine andere Größe, je nach Design */
-  height: 100px; /* Sollte gleich wie die Breite sein, um ein rundes Bild zu erzeugen */
-  border-radius: 50%; /* Macht das Bild rund */
-  margin-bottom: 10px; /* Etwas Abstand unter dem Bild */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 .kontakt-info {
-  /* Hier könntest du Styling für die Kontaktinformationen hinzufügen, z.B. Icons */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.kontakt-info a {
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #333;
+  padding: 10px; /* Anpassung der Padding-Werte */
+  border-radius: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+  width: 150px; /* Festlegen einer festen Breite für die Buttons */
+  text-align: center; /* Zentrieren des Textes in den Buttons */
+}
+
+.kontakt-info a i {
+  margin-right: 5px;
+}
+
+.kontakt-info a i.bxl-whatsapp {
+  color: green; /* Ändere die Farbe des WhatsApp-Icons */
+}
+
+.kontakt-info a i.bx-mail-send {
+  color: red; /* Ändere die Farbe des WhatsApp-Icons */
+}
 
 /* Sektion FAQ*/
 
@@ -513,7 +541,8 @@ body {
   border: none;
   text-align: left;
   outline: none;
-  font-size: 18px; /* Erhöhte Schriftgröße */
+  font-size: 18px;
+  /* Erhöhte Schriftgröße */
   transition: background-color 0.4s ease;
   display: flex;
   align-items: center;
@@ -530,17 +559,20 @@ body {
 
 /* Farbe der Icons setzen */
 .accordion .bx {
-  color: #007bff; /* Blaue Farbe für Icons */
+  color: var(--alex-blue);
+  /* Blaue Farbe für Icons */
 }
 
 .accordion .plus-icon {
-  color: red; /* Rote Farbe für das Plus-Icon */
+  color: var(--niclas-red);
+  /* Rote Farbe für das Plus-Icon */
   transition: transform 0.4s ease;
 }
 
 /* Rotes Minus beim Aufklappen */
 .accordion.active .plus-icon {
-  transform: rotate(45deg); /* Kreiert die Illusion eines Minus-Zeichens */
+  transform: rotate(45deg);
+  /* Kreiert die Illusion eines Minus-Zeichens */
 }
 
 .panel {
@@ -549,6 +581,43 @@ body {
   background-color: white;
   overflow: hidden;
 }
+
+
+/* Minimalistischer Footer-Stil */
+.footer {
+  background-color: #f0f0f0; /* Leichter grauer Hintergrund */
+  color: #333; /* Dunkle Schrift */
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid #ddd; /* Dünner oberer Rand */
+  margin-top: 20px; /* Abstand zur vorherigen Sektion */
+}
+
+.footer a {
+  color: var(--niclas-red);/* Link in blau */
+  text-decoration: none;
+  font-size: 16px; /* Größere Schriftgröße für den Link */
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer p {
+  margin: 5px 0; /* Gleichmäßiger Abstand zwischen den Texten */
+  font-size: 16px; /* Größere Schriftgröße für den Text */
+}
+
+/* Spezielle Farbzuweisung */
+.footer .alex {
+  color: var(--alex-blue);
+}
+
+.footer .niclas {
+  color: var(--niclas-red);
+}
+
 
 
 
@@ -570,6 +639,19 @@ body {
     font-size: 14px;
     /* Etwas kleiner auf Mobilgeräten */
   }
+
+  .logo {
+    display: inline-block;
+    /* Ermöglicht die Anwendung von width und height */
+    width: 190px;
+    /* Setze die gewünschte Breite des Logos */
+    height: auto;
+    /* Damit das Bild proportional skaliert wird */
+    text-decoration: none;
+    cursor: pointer;
+    /* Ändere von default zu pointer, da es sich um einen klickbaren Link handelt */
+  }
+
 
 
   #menu-icon {
@@ -710,32 +792,33 @@ body {
   /* Place the timelime to the left */
   .timeline::after {
     left: 31px;
-    }
-    
-    /* Full-width containers */
-    .container {
+  }
+
+  /* Full-width containers */
+  .container {
     width: 100%;
     padding-left: 70px;
     padding-right: 25px;
-    }
-    
-    /* Make sure that all arrows are pointing leftwards */
-    .container::before {
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
     left: 60px;
     border: medium solid white;
     border-width: 10px 10px 10px 0;
     border-color: transparent white transparent transparent;
-    }
-  
-    /* Make sure all circles are at the same spot */
-    .left::after, .right::after {
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after,
+  .right::after {
     left: 15px;
-    }
-    
-    /* Make all right containers behave like the left ones */
-    .right {
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
     left: 0%;
-    }
+  }
 
 
 
@@ -767,10 +850,7 @@ body {
     /* Etwas breiter auf kleinen Bildschirmen */
   }
 
-
-
-
-
+  /* Minimalistischer Footer-Stil */
 
 
 }
