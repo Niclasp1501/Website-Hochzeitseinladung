@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 // Funktion zum Überprüfen und Anzeigen des Namens
 function checkAndDisplayGuestName(guestName) {
-    const allowedNames = ['Alexander', 'Stefan', 'Ernst', 'Andrea']; // Hier die Namen eintragen die zum Standesamt kommen sollen
+    const allowedNames = ['Alexander', 'Stefan', 'Ernst', 'Andrea', "Erni", "Edeltraud", "Oliver", "Alexandra", "Brunhilde", "Elke", "Christoph" ]; // Hier die Namen eintragen die zum Standesamt kommen sollen
     let showFirstLocation = allowedNames.includes(guestName);
 
     var guestNameSpan = document.querySelector('.guest-name');
